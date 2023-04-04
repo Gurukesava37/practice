@@ -1,7 +1,6 @@
 ---
 - name: install and configure mariadb
   hosts: testServers
-  remote_user: ec2-user
   become: yes
 
   tasks: 
