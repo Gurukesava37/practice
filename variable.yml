@@ -10,7 +10,7 @@
 
     - debug: var= ansible_distribution_version
     - name: group some mechines togather tempararly
-      group_by: key= debian_{{"ansible_distribution_version"}}
+      group_by: key= debian_{{ansible_distribution_version}}
       register: group_result
     
-    - debug: var = "group_result"
+    - debug: var = group_result
