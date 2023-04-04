@@ -8,7 +8,7 @@
       register: output
     - debug: msg = "the date is {{output.stdout}}"
 
-    - debug: var = "ansible_distribution_version"
+    - debug: var= ansible_distribution_version
     - name: group some mechines togather tempararly
       group_by: key= debian_{{"ansible_distribution_version"}}
       register: group_result
