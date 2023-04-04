@@ -11,7 +11,7 @@
 
   - name: create mysql configure file
     template: 
-      src: my.cfg.j2
+      src: my.cfg.fallback
       dest: /etc/my.cnf
       notify: restart mariadb
 
