@@ -5,7 +5,7 @@
     - name: install apache2
       apt:
         name: httpd
-        state: latest
+        state: present
     - name: start apache service
       service: 
         name: start 
