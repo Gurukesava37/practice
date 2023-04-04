@@ -1,0 +1,15 @@
+---
+- name: testing variable stuff
+  hosts: testServers
+  become: yes
+  tasks: 
+    - name: get date on server
+      shell:  date
+      register: output
+    - debug: msg= "the date is {{output.stdout}}"
+    - debug: var = "ansible_distribution_version"
+    - name: group some mechines togather tempararly
+      group_by: key= debian_{{"ansible_distribution_version"}}
+      register: group_result
+    
+    - debug: var = group_result
