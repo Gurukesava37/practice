@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become : yes
+  tasks:
+    - name: install apache2
+      apt:
+        name: httpd
+        state: latest
+    - name: start apache service
+      service: 
+        name: start 
+        state: strated
+     
